@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 12 - Formularios e Interacción</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8fdf8;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #2e8b57;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        nav {
+            background: #266e46;
+            padding: 0.8rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: white;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2e8b57;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #90ee90;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: #266e46;
+            margin: 1rem 0 0.8rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 550px;
+            margin: 1rem auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 0.8rem;
+            background: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #266e46;
+        }
+        .resultado {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .fuentes {
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        footer {
+            background: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formularios e Interacción</h1>
+        <p>Práctica 12 - Promoción de Vida Saludable</p>
+    </header>
+
+    <nav>
+        <a href="#imc">Calculadora IMC</a>
+        <a href="#violencia">Evaluación Escolar</a>
+        <a href="#datos">Registro de Hábitos</a>
+    </nav>
+
+    <main>
+        <!-- Formulario 1: Cálculo de IMC -->
+        <section id="imc">
+            <h2>📊 Calculadora de Índice de Masa Corporal (IMC)</h2>
+            <p>Conoce tu estado de peso según tu estatura y peso, para llevar un control de tu salud.</p>
+            
+            <form id="formIMC">
+                <label>Peso en kilogramos:</label>
+                <input type="number" id="peso" step="0.1" min="1" max="300" required placeholder="Ejemplo: 62.5">
+
+                <label>Estatura en metros:</label>
+                <input type="number" id="estatura" step="0.01" min="0.50" max="2.50" required placeholder="Ejemplo: 1.65">
+
+                <button type="submit">Calcular IMC</button>
+                <button type="reset">Borrar datos</button>
+            </form>
+
+            <div id="resultadoIMC" class="resultado"></div>
+        </section>
+
+        <!-- Formulario 2: Evaluación de violencia escolar -->
+        <section id="violencia">
+            <h2>🤝 Evaluación del Ambiente Escolar</h2>
+            <p>Responde con sinceridad para identificar situaciones que se puedan mejorar en tu escuela.</p>
+
+            <form id="formViolencia">
+                <label>1. ¿Hay insultos o apodos ofensivos entre compañeros?</label>
+                <select id="pregunta1" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="0">Nunca</option>
+                    <option value="1">Pocas veces</option>
+                    <option value="2">A menudo</option>
+                    <option value="3">Siempre</option>
+                </select>
+
+                <label>2. ¿Se presentan empujones, golpes o agresiones físicas?</label>
+                <select id="pregunta2" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="0">Nunca</option>
+                    <option value="1">Pocas veces</option>
+                    <option value="2">A menudo</option>
+                    <option value="3">Siempre</option>
+                </select>
+
+                <label>3. ¿Se excluye o ignora a algún compañero?</label>
+                <select id="pregunta3" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="0">Nunca</option>
+                    <option value="1">Pocas veces</option>
+                    <option value="2">A menudo</option>
+                    <option value="3">Siempre</option>
+                </select>
+
+                <button type="submit">Ver resultado</button>
+                <button type="reset">Limpiar respuestas</button>
+            </form>
+
+            <div id="resultadoViolencia" class="resultado"></div>
+        </section>
+
+        <!-- Formulario 3: Registro de hábitos -->
+        <section id="datos">
+            <h2>📝 Registro de Hábitos Saludables</h2>
+            <p>Indica qué hábitos pones en práctica para cuidar tu salud.</p>
+
+            <form id="formHabitos">
+                <label>Nombre completo:</label>
+                <input type="text" id="nombre" required placeholder="Tu nombre aquí">
+
+                <label>¿Realizas actividad física?</label>
+                <select id="actividad" required>
+                    <option value="">Selecciona</option>
+                    <option value="si">Sí, todos los días</option>
+                    <option value="aveces">A veces</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label>¿Consumes más agua o bebidas azucaradas?</label>
+                <select id="bebidas" required>
+                    <option value="">Selecciona</option>
+                    <option value="agua">Más agua</option>
+                    <option value="mitad">Mitad y mitad</option>
+                    <option value="azucaradas">Más bebidas azucaradas</option>
+                </select>
+
+                <label>¿Duermes entre 7 y 8 horas diarias?</label>
+                <select id="sueno" required>
+                    <option value="">Selecciona</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <button type="submit">Enviar registro</button>
+            </form>
+
+            <div id="resultadoHabitos" class="resultado"></div>
+
+            <div class="fuentes">
+                <h4>Fuentes de consulta:</h4>
+                <ul>
+                    <li>MDN Web Docs: Formularios HTML y validación</li>
+                    <li>Organización Mundial de la Salud (OMS): Índice de Masa Corporal</li>
+                    <li>SEP: Guía para la convivencia sana en la escuela</li>
+                    <li>W3Schools: Eventos y manejo de datos con JavaScript</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Práctica 12 | Formularios e Interacción</p>
+    </footer>
+
+    <script>
+        // Cálculo de IMC
+        document.getElementById("formIMC").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const peso = parseFloat(document.getElementById("peso").value);
+            const estatura = parseFloat(document.getElementById("estatura").value);
+            const imc = peso / (estatura * estatura);
+            let interpretacion = "", color = "";
+
+            if (imc < 18.5) {
+                interpretacion = `IMC: ${imc.toFixed(2)} → Bajo peso. Se recomienda mejorar la alimentación.`;
+                color = "#fff3cd";
+            } else if (imc >= 18.5 && imc < 25) {
+                interpretacion = `IMC: ${imc.toFixed(2)} → Peso normal ✅ ¡Mantén tus hábitos!`;
+                color = "#d4edda";
+            } else if (imc >= 25 && imc < 30) {
+                interpretacion = `IMC: ${imc.toFixed(2)} → Sobrepeso. Se recomienda actividad física y dieta equilibrada.`;
+                color = "#fff3cd";
+            } else {
+                interpretacion = `IMC: ${imc.toFixed(2)} → Obesidad ⚠️ Consulta a un profesional de la salud.`;
+                color = "#f8d7da";
+            }
+
+            const res = document.getElementById("resultadoIMC");
+            res.textContent = interpretacion;
+            res.style.backgroundColor = color;
+        });
+
+        // Evaluación de ambiente escolar
+        document.getElementById("formViolencia").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const p1 = parseInt(document.getElementById("pregunta1").value);
+            const p2 = parseInt(document.getElementById("pregunta2").value);
+            const p3 = parseInt(document.getElementById("pregunta3").value);
+            const total = p1 + p2 + p3;
+            let mensaje = "", color = "";
+
+            if (total <= 2) {
+                mensaje = "✅ Nivel bajo: El ambiente es sano y respetuoso. Sigue así.";
+                color = "#d4edda";
+            } else if (total >= 3 && total <= 5) {
+                mensaje = "⚠️ Nivel medio: Existen situaciones que se pueden mejorar. Fomenta el diálogo.";
+                color = "#fff3cd";
+            } else {
+                mensaje = "🚨 Nivel alto: Se requiere atención inmediata. Habla con tus maestros o directivos.";
+                color = "#f8d7da";
+            }
+
+            const res = document.getElementById("resultadoViolencia");
+            res.textContent = mensaje;
+            res.style.backgroundColor = color;
+        });
+
+        // Registro de hábitos
+        document.getElementById("formHabitos").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const actividad = document.getElementById("actividad").value;
+            const bebidas = document.getElementById("bebidas").value;
+            const sueno = document.getElementById("sueno").value;
+
+            let mensaje = `Hola ${nombre} ✅ Tus hábitos: `;
+            if (actividad === "si") mensaje += "haces ejercicio, ";
+            else if (actividad === "aveces") mensaje += "a veces haces ejercicio, ";
+            else mensaje += "debes incluir actividad física, ";
+
+            if (bebidas === "agua") mensaje += "buena hidratación, ";
+            else if (bebidas === "mitad") mensaje += "puedes reducir bebidas azucaradas, ";
+            else mensaje += "debes aumentar el agua y reducir refrescos, ";
+
+            if (sueno === "si") mensaje += "duermes bien.";
+            else mensaje += "intenta dormir más horas.";
+
+            const res = document.getElementById("resultadoHabitos");
+            res.textContent = mensaje;
+            res.style.backgroundColor = "#e6f2ff";
+            res.style.color = "#0a3d62";
+        });
+    </script>
+</body>
+</html>

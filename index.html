@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 11 - Promoción de Vida Saludable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8fdf8;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #2e8b57;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        nav {
+            background: #266e46;
+            padding: 0.8rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2e8b57;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #90ee90;
+            padding-bottom: 0.5rem;
+        }
+        ul {
+            margin-left: 1.8rem;
+            margin-top: 0.8rem;
+        }
+        .media-contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        video, audio {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        footer {
+            background: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Promoción de una Vida Saludable</h1>
+        <p>Práctica 11 - Contenido y Multimedia</p>
+    </header>
+
+    <nav>
+        <a href="#salud">Salud</a>
+        <a href="#valores">Valores</a>
+        <a href="#violencia">Sin Violencia</a>
+        <a href="#alimentacion">Alimentación</a>
+        <a href="#multimedia">Multimedia</a>
+    </nav>
+
+    <main>
+        <section id="salud">
+            <h2>💪 Salud Física y Psicológica</h2>
+            <p>El bienestar completo incluye tanto el funcionamiento del cuerpo como el equilibrio emocional y mental.</p>
+            <ul>
+                <li><strong>Salud física:</strong> Realizar actividad física diaria, dormir entre 7 y 8 horas, mantener una buena higiene y acudir a revisiones médicas.</li>
+                <li><strong>Salud psicológica:</strong> Expresar emociones, manejar el estrés, tener relaciones sanas y buscar ayuda si se siente malestar emocional.</li>
+                <li><strong>IMC (Índice de Masa Corporal):</strong> Es una herramienta para saber si tu peso es adecuado según tu estatura. Se calcula: <br>
+                <em>IMC = Peso (kg) ÷ Estatura² (m)</em></li>
+            </ul>
+        </section>
+
+        <section id="valores">
+            <h2>🤝 Valores en Casa, Escuela y Comunidad</h2>
+            <p>Los valores son la base para una convivencia sana y respetuosa:</p>
+            <ul>
+                <li><strong>En casa:</strong> Respeto, honestidad, responsabilidad, solidaridad y comunicación.</li>
+                <li><strong>En la escuela:</strong> Compañerismo, puntualidad, respeto a maestros y normas, y trabajo en equipo.</li>
+                <li><strong>En la comunidad:</strong> Cuidar espacios públicos, ayudar a los demás, respetar las leyes y convivir en armonía.</li>
+            </ul>
+        </section>
+
+        <section id="violencia">
+            <h2>🚫 Erradicar la Violencia Escolar</h2>
+            <p>La violencia escolar es cualquier acción que daña física, verbal o emocionalmente a otra persona. Para eliminarla:</p>
+            <ul>
+                <li>No participar ni apoyar agresiones, burlas o exclusiones.</li>
+                <li>Defender a quien es agredido y avisar a adultos o autoridades.</li>
+                <li>Resolver conflictos mediante el diálogo y el respeto.</li>
+                <li>Fomentar la igualdad y la aceptación entre todos los compañeros.</li>
+            </ul>
+        </section>
+
+        <section id="alimentacion">
+            <h2>🍎 Hábitos Alimenticios Saludables</h2>
+            <p>Una buena alimentación es clave para tener energía, crecer sanos y prevenir enfermedades:</p>
+            <ul>
+                <li>✅ Consumir frutas, verduras, cereales integrales, legumbres y proteínas naturales.</li>
+                <li>❌ Reducir al mínimo las bebidas azucaradas, refrescos y jugos con azúcar añadida.</li>
+                <li>❌ Evitar alimentos procesados: papas fritas, dulces, embutidos y comidas con mucha sal o grasa.</li>
+                <li>✅ Beber suficiente agua todos los días.</li>
+            </ul>
+        </section>
+
+        <section id="multimedia">
+            <h2>🎬 Contenido Multimedia</h2>
+            <p>Material de apoyo para reforzar los temas:</p>
+            <div class="media-contenedor">
+                <div>
+                    <h3>Video: Vida Saludable</h3>
+                    <video controls preload="metadata">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Tu navegador no admite el reproductor de video.
+                        <track kind="subtitles" src="subtitulos.vtt" srclang="es" label="Español" default>
+                    </video>
+                </div>
+                <div>
+                    <h3>Audio: Consejos de Salud</h3>
+                    <audio controls preload="none">
+                        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                        Tu navegador no admite el reproductor de audio.
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Práctica 11 | Promoción de Vida Saludable</p>
+    </footer>
+</body>
+</html>

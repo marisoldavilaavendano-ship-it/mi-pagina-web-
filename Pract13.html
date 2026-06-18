@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 13 - Galería y Recursos Visuales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8fdf8;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #2e8b57;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        nav {
+            background: #266e46;
+            padding: 0.8rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2e8b57;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #90ee90;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Galería de imágenes */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+        .galeria img {
+            width: 240px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .galeria img:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+        }
+
+        /* Carrusel */
+        .carrusel {
+            position: relative;
+            max-width: 700px;
+            height: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .carrusel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        .carrusel .activa {
+            display: block;
+        }
+        .carrusel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            font-size: 1.8rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .anterior { left: 15px; }
+        .siguiente { right: 15px; }
+        .carrusel-btn:hover { background: rgba(0,0,0,0.8); }
+
+        footer {
+            background: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Imágenes y Recursos Visuales</h1>
+        <p>Práctica 13 - Promoción de Vida Saludable</p>
+    </header>
+
+    <nav>
+        <a href="#galeria">Galería</a>
+        <a href="#carrusel">Carrusel</a>
+    </nav>
+
+    <main>
+        <!-- Galería -->
+        <section id="galeria">
+            <h2>🖼️ Galería: Hábitos y Estilo de Vida Saludable</h2>
+            <p>Imágenes que representan cada uno de los temas trabajados:</p>
+            <div class="galeria">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Alimentación equilibrada con frutas y verduras">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Actividad física y ejercicio">
+                <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hidratación adecuada con agua">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Descanso y sueño reparador">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Valores y convivencia respetuosa">
+                <img src="https://images.unsplash.com/photo-1506126967322-60608e8d4ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Salud mental y emocional">
+                <img src="https://images.unsplash.com/photo-1544510808-91bcbee1df55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Evitar alimentos procesados y azúcares">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ambiente escolar sin violencia y compañerismo">
+            </div>
+        </section>
+
+        <!-- Carrusel -->
+        <section id="carrusel">
+            <h2>🎠 Carrusel: Temas de la Práctica</h2>
+            <p>Recorre las imágenes para ver los puntos clave de una vida sana:</p>
+            <div class="carrusel">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alimentación saludable" class="activa">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ejercicio diario">
+                <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beber suficiente agua">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Descanso adecuado">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Respeto y valores">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Convivencia sin violencia">
+
+                <button class="carrusel-btn anterior">&lt;</button>
+                <button class="carrusel-btn siguiente">&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Práctica 13 | Promoción de Vida Saludable</p>
+    </footer>
+
+    <script>
+        let indiceActual = 0;
+        const imagenes = document.querySelectorAll(".carrusel img");
+
+        function mostrarImagen() {
+            imagenes.forEach((img, i) => img.classList.toggle("activa", i === indiceActual));
+        }
+
+        function siguiente() {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            mostrarImagen();
+        }
+
+        function anterior() {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+            mostrarImagen();
+        }
+
+        document.querySelector(".siguiente").addEventListener("click", siguiente);
+        document.querySelector(".anterior").addEventListener("click", anterior);
+        setInterval(siguiente, 4000);
+    </script>
+</body>
+</html>
